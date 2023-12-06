@@ -13,4 +13,4 @@ touch "./day$1/input.txt"
 touch "./day$1/testInput.txt"
 
 # Make Go file
-cat "package day$1\n" >"./day$1/solve.go"
+printf "package day$1\n" >"./day$1/solve.go"

@@ -5,6 +5,7 @@ import (
 	_ "aoc2023/day2"
 	_ "aoc2023/day3"
 	_ "aoc2023/day4"
+	_ "aoc2023/day5"
 	"aoc2023/util"
 
 	"flag"
