@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "aoc2023/day1"
+	_ "aoc2023/day11"
 	_ "aoc2023/day2"
 	_ "aoc2023/day3"
 	_ "aoc2023/day4"
