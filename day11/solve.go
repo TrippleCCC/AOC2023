@@ -20,11 +20,11 @@ func init() {
 type Day11 struct{}
 
 func (Day11) Solve1() any {
-	return solve1(input, 2)
+	return solve(input, 2)
 }
 
 func (Day11) Solve2() any {
-	return solve1(input, 1000000)
+	return solve(input, 1000000)
 }
 
 type universeInfo struct {
@@ -35,8 +35,8 @@ type galaxy struct {
 	row, col int
 }
 
-func solve1(maze string, expansionFactor uint64) uint64 {
-	lines := slices.DeleteFunc(strings.Split(maze, "\n"), func(s string) bool { return s == "" })
+func solve(universe string, expansionFactor uint64) uint64 {
+	lines := util.RemoveEmptyLines(strings.Split(universe, "\n"))
 	cols := len(lines[0])
 
 	// Calculate empty rows
@@ -84,25 +84,13 @@ OUTER:
 		}
 		return n
 	}
-	minInt := func(a, b int) int {
-		if a < b {
-			return a
-		}
-		return b
-	}
-	maxInt := func(a, b int) int {
-		if a > b {
-			return a
-		}
-		return b
-	}
 
 	for _, c := range combos {
 		rdist := uint64(abs(c[0].col-c[1].col) + abs(c[0].row-c[1].row))
-		minRow := minInt(c[0].row, c[1].row)
-		maxRow := maxInt(c[0].row, c[1].row)
-		minCol := minInt(c[0].col, c[1].col)
-		maxCol := maxInt(c[0].col, c[1].col)
+		minRow := min(c[0].row, c[1].row)
+		maxRow := max(c[0].row, c[1].row)
+		minCol := min(c[0].col, c[1].col)
+		maxCol := max(c[0].col, c[1].col)
 
 		for i := minCol; i < maxCol; i++ {
 			if slices.Contains(emptyCols, i) {
