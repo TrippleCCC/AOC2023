@@ -58,6 +58,12 @@ func FilterList[A comparable](l []A, f func(A) bool) []A {
 	return ret
 }
 
+func RemoveEmptyLines(l []string) []string {
+	return FilterList(l, func(s string) bool {
+		return s != ""
+	})
+}
+
 func If[T any](cond bool, trueValue, falseValue T) T {
 	if cond {
 		return trueValue
