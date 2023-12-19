@@ -5,6 +5,9 @@ import (
 	_ "aoc2023/day11"
 	_ "aoc2023/day12"
 	_ "aoc2023/day13"
+	_ "aoc2023/day14"
+	_ "aoc2023/day15"
+	_ "aoc2023/day16"
 	_ "aoc2023/day2"
 	_ "aoc2023/day3"
 	_ "aoc2023/day4"
@@ -22,8 +25,9 @@ import (
 )
 
 var (
-	dayFlag  = flag.Int("day", -1, "Advent of code Day")
-	partFlag = flag.Int("part", -1, "1st or second part")
+	dayFlag      = flag.Int("day", -1, "Advent of code Day")
+	partFlag     = flag.Int("part", -1, "1st or second part")
+	useFullInput = flag.Bool("f", false, "Use the full day input")
 )
 
 func main() {
